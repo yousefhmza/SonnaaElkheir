@@ -8,6 +8,8 @@ import 'package:sonnaa/helper/constants.dart';
 import 'package:sonnaa/view/screens/donation/donate_screen.dart';
 import 'package:sonnaa/view/screens/initiatives/initiatives_screen.dart';
 import 'package:sonnaa/view/screens/medical_services_screen.dart';
+import 'package:sonnaa/view/screens/press_center/news_details_screen.dart';
+import 'package:sonnaa/view/screens/press_center/news_screen.dart';
 import 'package:sonnaa/view/screens/support_cases/support_cases_screen.dart';
 import 'package:sonnaa/view/screens/volunteer/volunteer_screen.dart';
 import 'package:sonnaa/view/widgets/custom_text.dart';
@@ -132,6 +134,7 @@ class HomeBody extends StatelessWidget {
     final double deviceHeight = MediaQuery.of(context).size.height;
     final double deviceWidth = MediaQuery.of(context).size.width;
     return SingleChildScrollView(
+      physics: const BouncingScrollPhysics(),
       child: Column(
         children: [
           CarouselSlider.builder(
@@ -157,11 +160,16 @@ class HomeBody extends StatelessWidget {
                   fontSize: 20.0.sp,
                 ),
                 const Spacer(),
-                CustomText(
-                  text: "مشاهدة الكل",
-                  fontSize: 12.0.sp,
-                  color: primaryColor,
-                  fontWeight: FontWeight.bold,
+                InkWell(
+                  onTap: () {
+                    navigateAndReplace(context, InitiativesScreen());
+                  },
+                  child: CustomText(
+                    text: "مشاهدة الكل",
+                    fontSize: 12.0.sp,
+                    color: primaryColor,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ],
             ),
@@ -192,11 +200,16 @@ class HomeBody extends StatelessWidget {
                   fontSize: 20.0.sp,
                 ),
                 const Spacer(),
-                CustomText(
-                  text: "مشاهدة الكل",
-                  fontSize: 12.0.sp,
-                  color: primaryColor,
-                  fontWeight: FontWeight.bold,
+                InkWell(
+                  onTap: () {
+                    navigateAndReplace(context, NewsScreen());
+                  },
+                  child: CustomText(
+                    text: "مشاهدة الكل",
+                    fontSize: 12.0.sp,
+                    color: primaryColor,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ],
             ),
@@ -204,21 +217,26 @@ class HomeBody extends StatelessWidget {
           SizedBox(height: deviceHeight * 0.01),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.0.w),
-            child: Column(
-              children: [
-                Image.asset(
-                  "assets/images/press.jpeg",
-                  fit: BoxFit.cover,
-                  height: 160,
-                  width: double.infinity,
-                ),
-                SizedBox(height: deviceHeight * 0.01),
-                CustomText(
-                  text:
-                      "توزيع 150 طن من المواد الغذائية قبل حلول شهر رمضان المبارك.",
-                  fontSize: 16.0.sp,
-                ),
-              ],
+            child: InkWell(
+              onTap: () {
+                navigateTo(context, NewsDetailsScreen());
+              },
+              child: Column(
+                children: [
+                  Image.asset(
+                    "assets/images/press.jpeg",
+                    fit: BoxFit.cover,
+                    height: 160,
+                    width: double.infinity,
+                  ),
+                  SizedBox(height: deviceHeight * 0.02),
+                  CustomText(
+                    text:
+                    "تستهدف توزيع 150طن مواد غذائية مع حلول الشهر الكريم بالصور .. صناع الخير تبدء فى تعبئة كراتين رمضان",
+                    fontSize: 16.0.sp,
+                  ),
+                ],
+              ),
             ),
           ),
           SizedBox(height: deviceHeight * 0.02),

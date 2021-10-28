@@ -1,12 +1,15 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:sonnaa/helper/components.dart';
 import 'package:sonnaa/helper/constants.dart';
 import 'package:sonnaa/models/drawer_item_model.dart';
+import 'package:sonnaa/view/screens/calculate_zakah_screen.dart';
 import 'package:sonnaa/view/screens/donation/donate_screen.dart';
 import 'package:sonnaa/view/screens/home_screen.dart';
 import 'package:sonnaa/view/screens/initiatives/initiatives_screen.dart';
+import 'package:sonnaa/view/screens/press_center/news_screen.dart';
 import 'package:sonnaa/view/screens/support_cases/support_cases_screen.dart';
 import 'package:sonnaa/view/screens/volunteer/volunteer_screen.dart';
 import 'package:sonnaa/view/screens/volunteer/volunteer_screen_celebrity.dart';
@@ -66,13 +69,17 @@ class HomeDrawer extends StatelessWidget {
         isTrailing: true,
       ),
       DrawerItemModel(
-        onTap: () {},
+        onTap: () {
+          navigateAndReplace(context, NewsScreen());
+        },
         icon: Icons.perm_media_outlined,
         title: "مركز الأخبار",
         isTrailing: true,
       ),
       DrawerItemModel(
-        onTap: () {},
+        onTap: () {
+          navigateTo(context, CalculateZakahScreen());
+        },
         icon: Icons.calculate_outlined,
         title: "حساب الزكاة",
         isTrailing: true,

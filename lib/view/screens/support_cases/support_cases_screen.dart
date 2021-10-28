@@ -49,6 +49,7 @@ class SupportCasesScreen extends StatelessWidget {
       ),
       drawer: const HomeDrawer(),
       body: SingleChildScrollView(
+        physics:  const BouncingScrollPhysics(),
         child: Column(
           children: [
             SizedBox(height: deviceHeight * 0.02),
