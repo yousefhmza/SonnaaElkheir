@@ -7,11 +7,13 @@ import 'package:sonnaa/view/widgets/custom_text.dart';
 class CustomButtonOutlined extends StatelessWidget {
   final String title;
   final Function()? onPressed;
+  final Color color;
 
   const CustomButtonOutlined({
     Key? key,
     required this.title,
     required this.onPressed,
+    this.color = canvasColor,
   }) : super(key: key);
 
   @override
@@ -26,7 +28,7 @@ class CustomButtonOutlined extends StatelessWidget {
       shape: Border.all(
         color: primaryColor,
       ),
-      color: canvasColor,
+      color: color,
       elevation: 0.0,
       child: CustomText(
         text: title,

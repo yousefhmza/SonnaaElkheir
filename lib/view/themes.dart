@@ -9,7 +9,7 @@ AppBarTheme _appBarTheme = AppBarTheme(
   color: canvasColor,
   centerTitle: true,
   titleTextStyle: TextStyle(
-    color: primaryColor,
+    color: Colors.black,
     fontSize: 18.0.sp,
     height: 2.0.h,
     fontFamily: "regular",

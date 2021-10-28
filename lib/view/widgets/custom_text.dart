@@ -6,12 +6,16 @@ class CustomText extends StatelessWidget {
   final double fontSize;
   final FontWeight fontWeight;
   final String fontFamily;
+  final TextOverflow? textOverflow;
+  final int? maxLines;
 
   const CustomText({
     Key? key,
     required this.text,
     required this.fontSize,
+    this.maxLines,
     this.color = Colors.black,
+    this.textOverflow,
     this.fontWeight = FontWeight.normal,
     this.fontFamily = "regular",
   }) : super(key: key);
@@ -26,6 +30,8 @@ class CustomText extends StatelessWidget {
         fontWeight: fontWeight,
         color: color,
       ),
+      maxLines: maxLines,
+      overflow: textOverflow,
     );
   }
 }

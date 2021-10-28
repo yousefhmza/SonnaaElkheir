@@ -160,28 +160,30 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
                       ),
                       DropdownMenuItem(
                         value: 1,
-                        child:
-                        CustomText(text: "تونس", fontSize: 16.0.sp),
+                        child: CustomText(text: "تونس", fontSize: 16.0.sp),
                       ),
                       DropdownMenuItem(
                         value: 2,
-                        child: CustomText(text: "المملكة العربيه السعودية", fontSize: 16.0.sp),
+                        child: CustomText(
+                            text: "المملكة العربيه السعودية",
+                            fontSize: 16.0.sp),
                       ),
                       DropdownMenuItem(
                         value: 3,
-                        child: CustomText(text: "الأمارات المتحدة", fontSize: 16.0.sp),
+                        child: CustomText(
+                            text: "الأمارات المتحدة", fontSize: 16.0.sp),
                       ),
                     ],
                   ),
                   SizedBox(height: deviceHeight * 0.03),
-
                   CustomButton(
                     title: "إرسال",
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
                         showToast(
-                            "تم إرسال طلبك بالتطوع معنا بنجاح وسنقوم بالتواصل معك خلال 24 ساعة",
-                            false);
+                          "تم إرسال طلبك بالتطوع معنا بنجاح وسنقوم بالتواصل معك خلال 24 ساعة",
+                          false,
+                        );
                       }
                     },
                   )

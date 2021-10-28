@@ -8,7 +8,7 @@ import 'package:sonnaa/helper/constants.dart';
 import 'package:sonnaa/view/screens/donation/donate_screen.dart';
 import 'package:sonnaa/view/screens/initiatives/initiatives_screen.dart';
 import 'package:sonnaa/view/screens/medical_services_screen.dart';
-import 'package:sonnaa/view/screens/support_cases_screen.dart';
+import 'package:sonnaa/view/screens/support_cases/support_cases_screen.dart';
 import 'package:sonnaa/view/screens/volunteer/volunteer_screen.dart';
 import 'package:sonnaa/view/widgets/custom_text.dart';
 import 'package:sonnaa/view/widgets/home_drawer.dart';
@@ -21,7 +21,12 @@ class HomeScreen extends StatelessWidget {
     AppLocalizations loc = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
-        title: Text(loc.sonnaaElkheir),
+        title: Text(
+          loc.sonnaaElkheir,
+          style: const TextStyle(
+            color: primaryColor,
+          ),
+        ),
         actions: [
           InkWell(
             onTap: () {
@@ -133,12 +138,7 @@ class HomeBody extends StatelessWidget {
             itemCount: _sliderImages["images"]!.length,
             itemBuilder: (context, index, pageViewIndex) => InkWell(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (_) => _sliderImages["screens"]![index],
-                  ),
-                );
+                navigateAndReplace(context, _sliderImages["screens"]![index]);
               },
               child: Image.asset(_sliderImages["images"]![index]),
             ),

@@ -7,7 +7,9 @@ import 'package:sonnaa/models/drawer_item_model.dart';
 import 'package:sonnaa/view/screens/donation/donate_screen.dart';
 import 'package:sonnaa/view/screens/home_screen.dart';
 import 'package:sonnaa/view/screens/initiatives/initiatives_screen.dart';
+import 'package:sonnaa/view/screens/support_cases/support_cases_screen.dart';
 import 'package:sonnaa/view/screens/volunteer/volunteer_screen.dart';
+import 'package:sonnaa/view/screens/volunteer/volunteer_screen_celebrity.dart';
 
 class HomeDrawer extends StatelessWidget {
   const HomeDrawer({Key? key}) : super(key: key);
@@ -42,28 +44,37 @@ class HomeDrawer extends StatelessWidget {
       DrawerItemModel(
         onTap: () {
           navigateAndReplace(context, VolunteerScreen());
-
         },
         icon: Icons.volunteer_activism,
         title: "تطوع معنا",
         isTrailing: true,
       ),
       DrawerItemModel(
-        onTap: () {},
+        onTap: () {
+          navigateAndReplace(context, VolunteerScreenCelebrity());
+        },
         icon: Icons.person,
         title: "تطوع معنا للمشاهير",
+        isTrailing: true,
+      ),
+      DrawerItemModel(
+        onTap: () {
+          navigateAndReplace(context, SupportCasesScreen());
+        },
+        icon: Icons.support,
+        title: "دعم الحالات",
+        isTrailing: true,
+      ),
+      DrawerItemModel(
+        onTap: () {},
+        icon: Icons.perm_media_outlined,
+        title: "مركز الأخبار",
         isTrailing: true,
       ),
       DrawerItemModel(
         onTap: () {},
         icon: Icons.calculate_outlined,
         title: "حساب الزكاة",
-        isTrailing: true,
-      ),
-      DrawerItemModel(
-        onTap: () {},
-        icon: Icons.support,
-        title: "دعم الحالات",
         isTrailing: true,
       ),
       DrawerItemModel(
@@ -94,12 +105,6 @@ class HomeDrawer extends StatelessWidget {
         onTap: () {},
         icon: Icons.event_available,
         title: "الأحداث المباشرة",
-        isTrailing: true,
-      ),
-      DrawerItemModel(
-        onTap: () {},
-        icon: Icons.perm_media_outlined,
-        title: "مركز الأخبار",
         isTrailing: true,
       ),
       DrawerItemModel(
