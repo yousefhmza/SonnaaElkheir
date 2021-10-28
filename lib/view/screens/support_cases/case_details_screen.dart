@@ -19,7 +19,7 @@ class CaseDetailsScreen extends StatelessWidget {
     final double deviceWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        title: const Text("تفاصيل الحالة"),
+        title: const Text("تفاصيل الحالة"),//skdsh
       ),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
