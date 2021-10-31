@@ -265,7 +265,7 @@ class SupportCaseItem extends StatelessWidget {
                 },
               ),
             ),
-            SizedBox(height: deviceHeight * 0.01),
+            SizedBox(height: deviceHeight * 0.02),
           ],
         ),
       ),

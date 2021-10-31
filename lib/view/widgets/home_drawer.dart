@@ -6,9 +6,11 @@ import 'package:sonnaa/helper/components.dart';
 import 'package:sonnaa/helper/constants.dart';
 import 'package:sonnaa/models/drawer_item_model.dart';
 import 'package:sonnaa/view/screens/calculate_zakah_screen.dart';
+import 'package:sonnaa/view/screens/donate_by_shopping/eshop_screen.dart';
 import 'package:sonnaa/view/screens/donation/donate_screen.dart';
 import 'package:sonnaa/view/screens/home_screen.dart';
 import 'package:sonnaa/view/screens/initiatives/initiatives_screen.dart';
+import 'package:sonnaa/view/screens/live_streams/live_streams.dart';
 import 'package:sonnaa/view/screens/press_center/news_screen.dart';
 import 'package:sonnaa/view/screens/support_cases/support_cases_screen.dart';
 import 'package:sonnaa/view/screens/volunteer/volunteer_screen.dart';
@@ -85,15 +87,17 @@ class HomeDrawer extends StatelessWidget {
         isTrailing: true,
       ),
       DrawerItemModel(
-        onTap: () {},
-        icon: Icons.live_tv,
-        title: "بث مباشر",
+        onTap: () {
+          navigateAndReplace(context, EShopScreen());
+        },
+        icon: Icons.shopping_cart,
+        title: "تبرع من خلال التسوق",
         isTrailing: true,
       ),
       DrawerItemModel(
         onTap: () {},
-        icon: Icons.shopping_cart,
-        title: "تبرع من خلال التسوق",
+        icon: Icons.live_tv,
+        title: "بث مباشر",
         isTrailing: true,
       ),
       DrawerItemModel(
@@ -109,7 +113,9 @@ class HomeDrawer extends StatelessWidget {
         isTrailing: true,
       ),
       DrawerItemModel(
-        onTap: () {},
+        onTap: () {
+          navigateAndReplace(context, LiveStreamsScreen());
+        },
         icon: Icons.event_available,
         title: "الأحداث المباشرة",
         isTrailing: true,

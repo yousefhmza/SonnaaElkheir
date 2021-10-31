@@ -11,6 +11,7 @@ class CustomTextField extends StatelessWidget {
   final String? Function(String?)? validator;
   final bool readOnly;
   final void Function(String?)? onSaved;
+  final void Function(String?)? onChanged;
   final void Function()? onTap;
   final void Function(String)? onFieldSubmitted;
   final TextEditingController? textEditingController;
@@ -24,6 +25,7 @@ class CustomTextField extends StatelessWidget {
     this.onFieldSubmitted,
     this.readOnly = false,
     this.onSaved,
+    this.onChanged,
     this.onTap,
     this.validator,
   }) : super(key: key);
@@ -42,6 +44,7 @@ class CustomTextField extends StatelessWidget {
           validator: validator,
           onSaved: onSaved,
           onTap: onTap,
+          onChanged: onChanged,
           onFieldSubmitted: onFieldSubmitted,
           keyboardType: keyboardType,
           cursorColor: primaryColor,
@@ -53,7 +56,7 @@ class CustomTextField extends StatelessWidget {
               fontSize: 14.0.sp,
               fontFamily: "regular",
             ),
-            focusedBorder: UnderlineInputBorder(
+            focusedBorder: const UnderlineInputBorder(
               borderSide: BorderSide(
                 color: primaryColor,
               ),

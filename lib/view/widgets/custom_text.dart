@@ -4,6 +4,7 @@ class CustomText extends StatelessWidget {
   final String text;
   final Color color;
   final double fontSize;
+  final TextAlign textAlign;
   final FontWeight fontWeight;
   final String fontFamily;
   final TextOverflow? textOverflow;
@@ -14,6 +15,7 @@ class CustomText extends StatelessWidget {
     required this.text,
     required this.fontSize,
     this.maxLines,
+    this.textAlign = TextAlign.start,
     this.color = Colors.black,
     this.textOverflow,
     this.fontWeight = FontWeight.normal,
@@ -32,6 +34,7 @@ class CustomText extends StatelessWidget {
       ),
       maxLines: maxLines,
       overflow: textOverflow,
+      textAlign: textAlign,
     );
   }
 }
